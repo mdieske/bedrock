@@ -663,7 +663,7 @@ class TestFirefoxNew(TestCase):
 
     @patch.object(views, 'ftl_file_is_active', lambda *x: True)
     def test_thanks_a_template(self, render_mock):
-        req = RequestFactory().get('/firefox/download/thanks/?v=a')
+        req = RequestFactory().get('/firefox/download/thanks/')
         req.locale = 'en-US'
         view = views.DownloadThanksView.as_view()
         view(req)
